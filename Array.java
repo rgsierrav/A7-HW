@@ -2,6 +2,7 @@ public class Array<T> {
     private T[] array;
     private int size;
 
+    @SuppressWarnings("unchecked")
     public Array(int size, T element) {
         this.array = (T[]) new Object[size];
         this.size = 0;
