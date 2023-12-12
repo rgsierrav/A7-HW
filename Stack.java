@@ -1,10 +1,8 @@
-import java.util.LinkedList;
-
 public class Stack<T> {
-    private LinkedList<T> list;
+    private java.util.LinkedList<T> list = new java.util.LinkedList<T>();
 
-    public Stack() {
-        this.list = new LinkedList<>();
+    public boolean isEmpty() {
+        return list.isEmpty();
     }
 
     public void push(T element) {
@@ -12,20 +10,16 @@ public class Stack<T> {
     }
 
     public T pop() {
-        if (isEmpty()) {
-            throw new IllegalStateException("Stack is empty");
+        if (list.isEmpty()) {
+            throw new java.util.NoSuchElementException("Stack is empty");
         }
         return list.removeFirst();
     }
 
     public T top() {
-        if (isEmpty()) {
-            throw new IllegalStateException("Stack is empty");
+        if (list.isEmpty()) {
+            throw new java.util.NoSuchElementException("Stack is empty");
         }
         return list.getFirst();
-    }
-
-    public boolean isEmpty() {
-        return list.isEmpty();
     }
 }
